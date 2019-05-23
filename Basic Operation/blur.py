@@ -64,12 +64,27 @@ def BilateralFilter():
 		if (ans=='n'):
 			return
 
+def Gamma():
+	print("check source code for implementation")
+	while(True):
+		gamma = float(input('Enter gamma value:'))
+		gamma_img = np.power(img,gamma)
+		canny_img = cv2.Canny(gamma_img,50,150)
+		cv2.imshow('Gamma Image',gamma_img)
+		cv2.waitKey(1)
+		cv2.imshow('Gamma effect in Canny',canny_img)
+		cv2.waitKey(1)
+		ans = input("Try again?[y/n]")
+		if (ans=='n'):
+			return
+
 while(True):
 	os.system('cls||clear')
 	print('1. Average')
 	print('2. GaussianBlur')
 	print('3. MedianBlur')
 	print('4. BilateralFilter')
+	print('5. Gamma')
 	print('Any other key to exit')
 	i = input('Choose any of the above: ')
 	if i=='1':
@@ -80,6 +95,8 @@ while(True):
 		MedianBlur()
 	elif i=='4':
 		BilateralFilter()
+	elif i=='5':
+		Gamma()
 	else:
 		exit()
 	cv2.destroyAllWindows()
