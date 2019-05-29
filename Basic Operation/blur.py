@@ -69,11 +69,12 @@ def Gamma():
 	while(True):
 		gamma = float(input('Enter gamma value:'))
 		gamma_img = np.power(img,gamma)
-		canny_img = cv2.Canny(gamma_img,50,150)
+		print(type(img), type(gamma_img))
+		#canny_img = cv2.Canny(gamma_img,50,150)
 		cv2.imshow('Gamma Image',gamma_img)
 		cv2.waitKey(1)
-		cv2.imshow('Gamma effect in Canny',canny_img)
-		cv2.waitKey(1)
+		#cv2.imshow('Gamma effect in Canny',canny_img)
+		#cv2.waitKey(1)
 		ans = input("Try again?[y/n]")
 		if (ans=='n'):
 			return
